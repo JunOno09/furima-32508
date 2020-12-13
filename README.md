@@ -17,6 +17,7 @@
 
 ### Association
 
+- has_one :purchase_management
 - has_one :credit_card
 - has_one :user_adress
 - has_many :items
@@ -42,19 +43,19 @@
 
 ## users_adressテーブル
 
-| Column       | Type       | Options                        |
-| ------------ | ---------- | ------------------------------ |
-|postal_code   | integer    | null: false                    |
-|prefectures   | string     | null: false                    |
-|city          | string     | null: false                    |
-|adress        | string     | null: false                    |
-|building_name | string     | null: false                    |
-|phone_number  | string     | null: false                    |
-|user_id       | references | null: false, foreign_key: true |
+| Column                      | Type       | Options                        |
+| --------------------------- | ---------- | ------------------------------ |
+|postal_code                  | integer    | null: false                    |
+|prefectures                  | string     | null: false                    |
+|city                         | string     | null: false                    |
+|adress                       | string     | null: false                    |
+|building_name                | string     | null: false                    |
+|phone_number                 | string     | null: false                    |
+|purchase_management_id       | references | null: false, foreign_key: true |
 
 ### Association
 
-- has_one :purchase_management
+- belongs_to :purchase_management
 - belongs_to :user 
 
 ## itemsテーブル
@@ -81,15 +82,16 @@
 
 ## purchase_managementテーブル
 
-| Column         | Type         | Options                        |
-| -------------- | ------------ | ------------------------------ |
-|users_adress_id | references   | null: false, foreign_key: true |
-|item_id         | references   | null: false, foreign_key: true |
+| Column | Type         | Options                        |
+| ------ | ------------ | ------------------------------ |
+|user_id | references   | null: false, foreign_key: true |
+|item_id | references   | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :user_adress
-- belongs_to :item
+- has_one :user_adress
+- belongs_to :item 
+- belongs_to :users_adress
 
 
 
