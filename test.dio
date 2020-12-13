@@ -1,6 +1,6 @@
-<mxfile host="65bd71144e" modified="2020-12-13T10:15:05.924Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.51.1 Chrome/83.0.4103.122 Electron/9.3.3 Safari/537.36" version="13.10.0" etag="I4b2NgZ2_gYB9E-GAYsO" type="embed">
+<mxfile host="65bd71144e" modified="2020-12-13T12:42:52.383Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.51.1 Chrome/83.0.4103.122 Electron/9.3.3 Safari/537.36" version="13.10.0" etag="i3qrpxGee5EGR0savqfm" type="embed">
     <diagram id="T1mieOkcrnWkQr7JGW2L" name="ページ1">
-        <mxGraphModel dx="1880" dy="971" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="2251" dy="971" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -9,18 +9,6 @@
                 </mxCell>
                 <mxCell id="31" value="&lt;span&gt;postal_code(integer型,NOT NULL)&lt;/span&gt;&lt;br&gt;&lt;span&gt;prefectures(string型, NOT NULL)&lt;/span&gt;&lt;br&gt;&lt;span&gt;city(string型, NOT NULL)&lt;/span&gt;&lt;br&gt;&lt;span&gt;adress(string型, NOT NULL)&lt;/span&gt;&lt;br&gt;&lt;span&gt;building_name(string型, )&lt;/span&gt;&lt;br&gt;&lt;span&gt;phone_number(istring型,NOT NULL)&lt;br&gt;purchase_management_id&lt;/span&gt;&lt;span style=&quot;text-align: left&quot;&gt;(references型 )&lt;/span&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="28">
                     <mxGeometry y="50" width="240" height="120" as="geometry"/>
-                </mxCell>
-                <mxCell id="32" value="credit_cardテーブル&#10;(クレジットカード)" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=45;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
-                    <mxGeometry x="-210" y="120" width="240" height="155" as="geometry"/>
-                </mxCell>
-                <mxCell id="33" value="customer_number(integer型,NOT NULL)&#10;expiration_month(integer型,NOT NULL)&#10;expiration_year(integer型,NOT NULL)&#10;cvc(integer型,NOT NULL)&#10;user_id(references型 )" style="align=center;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="32">
-                    <mxGeometry y="45" width="240" height="110" as="geometry"/>
-                </mxCell>
-                <mxCell id="34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="32" source="33" target="33">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.423;entryY=-0.026;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="32" source="33" target="33">
-                    <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="36" value="usersテーブル(登録者）" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
                     <mxGeometry x="330" y="120" width="270" height="180" as="geometry"/>
@@ -38,12 +26,6 @@
                     <mxGeometry width="100" height="100" relative="1" as="geometry">
                         <mxPoint x="600" y="220" as="sourcePoint"/>
                         <mxPoint x="920" y="220" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="44" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERzeroToOne;startArrow=ERmandOne;strokeWidth=3;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" edge="1" parent="1" source="33">
-                    <mxGeometry width="100" height="100" relative="1" as="geometry">
-                        <mxPoint x="230" y="290" as="sourcePoint"/>
-                        <mxPoint x="330" y="190" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="45" value="commentテーブル" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
