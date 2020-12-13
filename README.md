@@ -2,12 +2,12 @@
 
 ## usersテーブル
 
-| Column             | Type        | Options                |
+| Column             | Type    | Options                    |
 | ------------------ | ------- | -------------------------- |
 | nickname           | string  | null: false, unique: true  |
 | email              | string  | null: false                |
 | encrypted_password | string  | null: false                |
-| first_name         |string   | null: false                |
+| first_name         | string  | null: false                |
 | fammily_name       | string  | null: false                |
 | family_name_kana   | string  | null: false                |
 | first_name_kana    | string  | null: false                |
@@ -35,7 +35,7 @@
 |adress                       | string     | null: false                    |
 |building_name                | string     | null: false                    |
 |phone_number                 | string     | null: false                    |
-|purchase_management_id       | references | null: false, foreign_key: true |
+|purchase_management          | references | null: false, foreign_key: true |
 
 ### Association
 
