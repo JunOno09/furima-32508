@@ -8,7 +8,7 @@
 | email              | string  | null: false                |
 | encrypted_password | string  | null: false                |
 | first_name         | string  | null: false                |
-| fammily_name       | string  | null: false                |
+| family_name        | string  | null: false                |
 | family_name_kana   | string  | null: false                |
 | first_name_kana    | string  | null: false                |
 | birth_day          | date    | null: false                |
@@ -29,7 +29,7 @@
 | Column                      | Type       | Options                        |
 | --------------------------- | ---------- | ------------------------------ |
 |postal_code                  | string     | null: false                    |
-|prefecture_id                | integer    | null: false                    |
+|delivery_area_id             | integer    | null: false                    |
 |city                         | string     | null: false                    |
 |adress                       | string     | null: false                    |
 |building_name                | string     |                                |
