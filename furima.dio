@@ -1,0 +1,52 @@
+<mxfile host="65bd71144e" modified="2020-12-14T06:53:56.315Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.51.1 Chrome/83.0.4103.122 Electron/9.3.3 Safari/537.36" version="13.10.0" etag="zGDYx1-uk7YuGCCOgrqK" type="embed">
+    <diagram id="CpGvS5UNnT9htFcDswzE" name="ページ1">
+        <mxGraphModel dx="1006" dy="971" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="8" value="userテーブル&#10;(登録者）" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="236" y="415" width="254" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="nickname(string,NOTNULL)&#10;email(string,NOTNULL,unique:true&#10;encrypted_password(string,NOTNULL)&#10;family_name(string,NOTNULL)&#10;first_name(string,NOTNULL)&#10;family_name_kana(string,NOTNULL)&#10;first_name_kana(string,NOTNULL)&#10;birth_day(date,NOTNULL" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="8">
+                    <mxGeometry y="30" width="254" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="itemsテーブル&#10;（出品物）" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="840" y="410" width="240" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="name(string,NOTNULL)&#10;description(text,NOTNULL)&#10;image(Active Strage)&#10;category_id(integer,NOTNULL)&#10;condition_id(integer,NOTNULL)&#10;delivery_fee_id(integer,NOTNULL)&#10;delivery_area_id(integer,NOTNULL)&#10;delivery_day_id(integer,NOTNULL)&#10;price(integer,NOTNULL)&#10;user_id(references)&#10;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="10">
+                    <mxGeometry y="30" width="240" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="purchase_management テーブル&#10;(購入管理)" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="250" y="710" width="240" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="&lt;span style=&quot;text-align: left&quot;&gt;user_id(references)&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;text-align: left&quot;&gt;item_id(references)&lt;/span&gt;&lt;span style=&quot;text-align: left&quot;&gt;&lt;br&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="12">
+                    <mxGeometry y="50" width="240" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="user_addressesテーブル&#10;(購入者）" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" vertex="1" parent="1">
+                    <mxGeometry x="253" y="940" width="220" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="postal_code(integer,NOTNULL)&#10;delivery_area_id(intger,NOTNULL)&#10;city(string,NOTNULL)&#10;address(string,NOTNULL)&#10;building_name(string)&#10;phone_number(string,NOTNULL)&#10;purchase_management_id(references)" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="16">
+                    <mxGeometry y="30" width="220" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERzeroToMany;startArrow=ERzeroToOne;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=1;endSize=10;" edge="1" parent="1" target="11">
+                    <mxGeometry width="100" height="100" relative="1" as="geometry">
+                        <mxPoint x="490" y="525" as="sourcePoint"/>
+                        <mxPoint x="590" y="415" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="19" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERzeroToMany;startArrow=ERzeroToOne;strokeWidth=1;endSize=10;" edge="1" parent="1">
+                    <mxGeometry width="100" height="100" relative="1" as="geometry">
+                        <mxPoint x="490.0000000000002" y="560.0000000000002" as="sourcePoint"/>
+                        <mxPoint x="250" y="790" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="22" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=circle;startArrow=ERmandOne;strokeWidth=1;exitX=1.023;exitY=0.755;exitDx=0;exitDy=0;exitPerimeter=0;endFill=1;" edge="1" parent="1" source="15">
+                    <mxGeometry width="100" height="100" relative="1" as="geometry">
+                        <mxPoint x="740" y="685" as="sourcePoint"/>
+                        <mxPoint x="840" y="585" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

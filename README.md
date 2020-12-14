@@ -25,7 +25,7 @@
 | postal_code         | string     | null: false                    |
 | delivery_area_id    | integer    | null: false                    |
 | city                | string     | null: false                    |
-| adress              | string     | null: false                    |
+| address             | string     | null: false                    |
 | building_name       | string     |                                |
 | phone_number        | string     | null: false                    |
 | purchase_management | references | null: false, foreign_key: true |
