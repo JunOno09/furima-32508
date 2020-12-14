@@ -16,8 +16,7 @@
 
 ### Association
 
-- has_one :purchase_management
-- has_one :user_adress
+- has_many :purchase_managements
 - has_many :items
 
 
@@ -25,7 +24,7 @@
 
 
 
-## user_adressesテーブル
+## user_addressesテーブル
 
 | Column                      | Type       | Options                        |
 | --------------------------- | ---------- | ------------------------------ |
@@ -33,7 +32,7 @@
 |prefecture_id                | integer    | null: false                    |
 |city                         | string     | null: false                    |
 |adress                       | string     | null: false                    |
-|building_name                | string     | null: false                    |
+|building_name                | string     |                                |
 |phone_number                 | string     | null: false                    |
 |purchase_management          | references | null: false, foreign_key: true |
 
@@ -48,19 +47,17 @@
 | ---------------- | ------------ | ------------------------------ |
 |name              | string       | null: false                    |
 |description       | text         | null: false                    |
-|item_category_id  | string       | null: false                    |
-|item_condition_id | string       | null: false                    |
-|delivery_fee_id   | string       | null: false                    |
-|delivery_area_id  | string       | null: false                    |
-|delivery_day_id   | string       | null: false                    |
+|category_id       | integer      | null: false                    |
+|condition_id      | integer      | null: false                    |
+|delivery_fee_id   | integer      | null: false                    |
+|delivery_area_id  | integer      | null: false                    |
+|delivery_day_id   | integer      | null: false                    |
 |price             | integer      | null: false                    |
 |user              | references   | null: false, foreign_key: true |
  
 ### Association
 
 - belongs_to :user 
-- has_many :comments
-- has_many :favorites
 - has_one :purchase_management
 
 
@@ -73,9 +70,9 @@
 
 ### Association
 
-- has_one :user_adress
+- has_one :user_address
 - belongs_to :item 
-- belongs_to :users_adress
+- belongs_to :user
 
 
 
