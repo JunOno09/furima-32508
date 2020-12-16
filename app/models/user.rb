@@ -14,7 +14,7 @@ class User < ApplicationRecord
             validates :birth_day
            end
 
-           validates :password, presence: true,length: { minimum: 5 }, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i }
+           validates :password, presence: true,length: { minimum: 6 }, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i }
 
            with_options presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々]+\z/ } do
             validates :family_name
