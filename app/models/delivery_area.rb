@@ -1,2 +1,2 @@
-class DeliveryArea < ApplicationRecord
+class DeliveryArea < ActiveHash::Base
 end

@@ -1,2 +1,2 @@
-class DeliveryFee < ApplicationRecord
+class DeliveryFee < ActiveHash::Base
 end

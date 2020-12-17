@@ -1,2 +1,2 @@
-class DeliveryDay < ApplicationRecord
+class DeliveryDay < ActiveHash::Base
 end
