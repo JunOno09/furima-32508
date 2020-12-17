@@ -9,10 +9,19 @@ class Item < ApplicationRecord
     belongs_to :delivery_day
     belongs_to :delivery_fee
   
+    with_options presence: true do
+      validates :name
+      validates :description
+      validates :image
+    end
+    validates :price, presence: true,numericality: {greater_than:299, less_than:10000000}
 
-    validates :category_id, numericality: { other_than: 1 } 
-    validates :condition_id, numericality: { other_than: 1 }
-    validates :delivery_area_id, numericality: { other_than: 1 }
-    validates :delivery_fee_id, numericality: { other_than: 1 }
-    validates :delivery_day_id, numericality: { other_than: 1 }
+    with_options presence: true,numericality: { other_than: 1 }  do 
+      validates :category_id 
+      validates :condition_id
+      validates :delivery_area_id
+      validates :delivery_fee_id
+      validates :delivery_day_id
+    end
+
 end
