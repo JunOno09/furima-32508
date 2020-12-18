@@ -57,7 +57,7 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Delivery fee can't be blank", "Delivery fee is not a number")
       end
-      it "配送料の負担IDがのとき出品できない" do
+      it "配送料の負担IDが1のとき出品できない" do
         @item.delivery_fee_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Delivery fee must be other than 1")
