@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+         has_many :purchase_managements
          has_many :items
         # #  validates :password, format: { with: 正規表現, message: 'エラー文' }
            
