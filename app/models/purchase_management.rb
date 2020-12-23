@@ -21,6 +21,9 @@ class PurchaseManagement
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :delivery_area
 
+  def save
+    UserAddress.create(postal_code: postal_code, delivery_area_id: delivery_area_id, city: city, address: address, building_name: building_name,user_id: user.id,item_id: item.id)
+  end
 
   
 
