@@ -1,5 +1,13 @@
 class OrdersController < ApplicationController
   def index
-    @ordres = Order.includes(:user)
+    @item = Item.find(params[:item_id])
+    # @orders = @item.orders.includes(:user)
   end
+
+  def new
+  end
+
+  def create
+  end
+
 end
