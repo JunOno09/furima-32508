@@ -1,13 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe SellItem, type: :model do
+  before do
+    @user =FactoryBot.create(:user)
+    @item =FactoryBot.create(:item)
+    @sell_item = FactoryBot.build(:sell_item, user_id: @user.id, item_id: @item.id)
+   end
   describe '購入機能の実装' do
-      before do
-       @user =FactoryBot.create(:user)
-       @item =FactoryBot.create(:item)
-       @sell_item = FactoryBot.build(:sell_item, user_id: @user.id, item_id: @item.id)
+    context '購入がうまくいくとき' do
+      it 'すべての値が正しく入力されていれば保存できること' do
       end
+    end
 
+    context '購入がうまくいかないとき' do
       it 'すべての値が正しく入力されていれば保存できること' do
       end
       it 'nameが空だと保存できないこと' do
@@ -42,5 +47,7 @@ RSpec.describe SellItem, type: :model do
       end
       it 'priceが1,000,000円を超過すると保存できないこと' do
       end
+      
+    end
   end
 end
