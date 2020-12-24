@@ -6,7 +6,7 @@ FactoryBot.define do
     city                      {Gimei.city.kanji }
     address                   {Gimei.town.kanji}
     building_name            { '東京ハイツ' }
-    phone_number            {Faker::Number.number(11)}
+    phone_number            {'09000000000'}
 
    
     association :user
