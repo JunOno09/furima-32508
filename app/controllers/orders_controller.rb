@@ -4,7 +4,6 @@ class OrdersController < ApplicationController
   def index
     @item = Item.find(params[:item_id])
     @sell_item =SellItem.new
-    # @orders = @item.orders.includes(:user)
   end
 
   def new

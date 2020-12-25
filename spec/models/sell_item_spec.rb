@@ -61,24 +61,13 @@ RSpec.describe SellItem, type: :model do
         @sell_item.valid?
         expect(@sell_item.errors.full_messages).to include("Token can't be blank")
       end
-      it 'postal_codeが半角のハイフンを含んだ正しい形式でないと保存できないこと' do
-      end
-      it 'prefectureを選択していないと保存できないこと' do
-      end
+      
       it 'cityは空でも保存できること' do
       end
       it 'house_numberは空でも保存できること' do
       end
       it 'building_nameは空でも保存できること' do
-      end
-      it 'priceが空だと保存できないこと' do
-      end
-      it 'priceが全角数字だと保存できないこと' do
-      end
-      it 'priceが1円未満では保存できないこと' do
-      end
-      it 'priceが1,000,000円を超過すると保存できないこと' do
-      end
+      
 
     end
   end
