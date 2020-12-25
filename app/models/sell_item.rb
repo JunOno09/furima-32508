@@ -2,11 +2,12 @@ class SellItem
 
   
   include ActiveModel::Model
-  attr_accessor :postal_code, :delivery_area_id, :city,:address, :building_name ,:phone_number, :user_id,:item_id
+  attr_accessor :postal_code, :delivery_area_id, :city,:address, :building_name ,:phone_number, :user_id,:item_id,:token
  
   with_options presence: true do
     validates :city
     validates :address
+    validates :token
   end
 
   validates :delivery_area_id,presence: true,numericality: { other_than: 1 }

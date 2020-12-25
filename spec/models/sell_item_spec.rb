@@ -57,6 +57,9 @@ RSpec.describe SellItem, type: :model do
         expect(@sell_item.errors.full_messages).to include("Phone number number is invalid. Include half-width numbers")
       end
       it 'tokenが空だと保存できない' do
+        @sell_item.token = nil
+        @sell_item.valid?
+        expect(@sell_item.errors.full_messages).to include("Token can't be blank")
       end
       it 'postal_codeが半角のハイフンを含んだ正しい形式でないと保存できないこと' do
       end
