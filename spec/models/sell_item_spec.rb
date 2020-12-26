@@ -11,6 +11,11 @@ RSpec.describe SellItem, type: :model do
       it 'すべての値が正しく入力されていれば保存できること' do
         expect(@sell_item).to be_valid
       end
+      it '建物名が抜けていても登録できること' do
+        @sell_item.building_name = nil
+        expect(@sell_item).to be_valid
+      end
+
     end
 
     context '購入がうまくいかないとき' do
@@ -51,8 +56,18 @@ RSpec.describe SellItem, type: :model do
         expect(@sell_item.errors.full_messages).to include("Phone number number is invalid. Include half-width numbers")
 
       end
+      it '電話番号は12桁以上は保存できない' do
+        @sell_item.phone_number = '090123412345'
+        @sell_item.valid?
+        expect(@sell_item.errors.full_messages).to include("Phone number is too long (maximum is 11 characters)")
+      end
       it '電話番号にはハイフンは不要で、11桁以内でないと保存できない' do
         @sell_item.phone_number = '111-1111-111'
+        @sell_item.valid?
+        expect(@sell_item.errors.full_messages).to include("Phone number number is invalid. Include half-width numbers")
+      end
+      it '電話番号は英数混合では登録できないこと' do
+        @sell_item.phone_number = '0900000000o'
         @sell_item.valid?
         expect(@sell_item.errors.full_messages).to include("Phone number number is invalid. Include half-width numbers")
       end
@@ -60,6 +75,16 @@ RSpec.describe SellItem, type: :model do
         @sell_item.token = nil
         @sell_item.valid?
         expect(@sell_item.errors.full_messages).to include("Token can't be blank")
+      end
+      it 'user_idが空だと保存できない' do
+        @sell_item.user_id = nil
+        @sell_item.valid?
+        expect(@sell_item.errors.full_messages).to include("User can't be blank")
+      end
+      it 'item_idが空だと保存できない' do
+        @sell_item.item_id = nil
+        @sell_item.valid?
+        expect(@sell_item.errors.full_messages).to include("Item can't be blank")
       end
     end
   end

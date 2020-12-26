@@ -8,11 +8,13 @@ class SellItem
     validates :city
     validates :address
     validates :token
+    validates :user_id
+    validates :item_id
   end
 
   validates :delivery_area_id,presence: true,numericality: { other_than: 1 }
-  validates :postal_code,format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Include hyphen(-)" }
-  validates :phone_number,format: { with: /\A0[0-9]+\z/, message: 'number is invalid. Include half-width numbers' } 
+  validates :postal_code,presence: true, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Include hyphen(-)" }
+  validates :phone_number,presence: true, length: { maximum: 11 }, format: { with: /\A0[0-9]+\z/, message: 'number is invalid. Include half-width numbers' } 
 
 
   def save
