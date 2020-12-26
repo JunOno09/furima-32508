@@ -5,7 +5,7 @@ RSpec.describe SellItem, type: :model do
     @user =FactoryBot.create(:user)
     @item =FactoryBot.create(:item)
     @sell_item = FactoryBot.build(:sell_item, user_id: @user.id, item_id: @item.id)
-   end
+  end
   describe '購入機能の実装' do
     context '購入がうまくいくとき' do
       it 'すべての値が正しく入力されていれば保存できること' do
@@ -61,14 +61,6 @@ RSpec.describe SellItem, type: :model do
         @sell_item.valid?
         expect(@sell_item.errors.full_messages).to include("Token can't be blank")
       end
-      
-      it 'cityは空でも保存できること' do
-      end
-      it 'house_numberは空でも保存できること' do
-      end
-      it 'building_nameは空でも保存できること' do
-      
-
     end
   end
 end
