@@ -1,9 +1,12 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!,except: :index
 
   def index
     @item = Item.find(params[:item_id])
     @sell_item =SellItem.new
+    if current_user == @item.user ||@item.purchase_management.present?
+       redirect_to root_path
+    end
   end
 
   def new
@@ -12,14 +15,16 @@ class OrdersController < ApplicationController
   def create
      @item = Item.find(params[:item_id])
      @sell_item = SellItem.new(sell_params)  
-     if @sell_item.valid?
+     if @sell_item.valid? 
       pay_item
        @sell_item.save
        redirect_to root_path
      else
        render :index
      end
+     
   end
+
 
   private
 
